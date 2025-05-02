@@ -47,3 +47,40 @@ button {
   border: none;
   border-radius: 0.25rem;
 }
+
+form button:hover {
+  background-color: #5dabf9;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dddddd;
+  padding: 0.62rem;
+}
+
+li span {
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 0.62rem;
+}
+
+.actions button {
+  background-color: #eeeeee;
+  color: #333333;
+  padding: 0.32rem 0.62rem;
+  border-radius: 0.25rem;
+}
+
+.actions button:hover {
+  background-color: #dddddd;
+}
