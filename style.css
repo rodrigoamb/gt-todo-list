@@ -38,3 +38,12 @@ form {
   padding: 0.62rem;
   font-size: 1rem;
 }
+
+button {
+  padding: 0.62rem 1.24rem;
+  cursor: pointer;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+}
