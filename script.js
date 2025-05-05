@@ -21,6 +21,7 @@ function renderTodos() {
 
     const editBtn = document.createElement("button");
     editBtn.textContent = "Editar";
+    editBtn.onclick = () => editTodo(index);
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Excluir";
