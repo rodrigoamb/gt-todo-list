@@ -2,15 +2,11 @@ const todoForm = document.getElementById("todo-form");
 const todoInput = document.getElementById("todo-input");
 const todoList = document.getElementById("todo-list");
 
-const data = ["Estudar JS", "Aprender DOM", "Fazer projeto"];
-
 function saveToLocalStorage() {
-  localStorage.setItem("taks", JSON.stringify(data));
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
 
-let todos = JSON.parse(localStorage.getItem("taks")) || [];
-
-console.log(todos);
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
 
 saveToLocalStorage();
 
@@ -49,8 +45,6 @@ function addTodo(event) {
   if (newTodo === "") {
     return;
   }
-
-  console.log("tarefa digitada: ", newTodo);
 
   todos.push(newTodo);
   saveToLocalStorage();
