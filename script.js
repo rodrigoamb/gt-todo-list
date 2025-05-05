@@ -2,7 +2,7 @@ const todoForm = document.getElementById("todo-form");
 const todoInput = document.getElementById("todo-input");
 const todoList = document.getElementById("todo-list");
 
-const data = ["tarefa1", "tarefa2", "tarefa3"];
+const data = ["Estudar JS", "Aprender DOM", "Fazer projeto"];
 
 function saveToLocalStorage() {
   localStorage.setItem("taks", JSON.stringify(data));
@@ -15,6 +15,7 @@ console.log(todos);
 saveToLocalStorage();
 
 function renderTodos() {
+  todoList.innerHTML = "";
   todos.forEach((todo, index) => {
     const li = document.createElement("li");
 
@@ -39,3 +40,24 @@ function renderTodos() {
     todoList.appendChild(li);
   });
 }
+
+function addTodo(event) {
+  event.preventDefault();
+
+  const newTodo = todoInput.value.trim();
+
+  if (newTodo === "") {
+    return;
+  }
+
+  console.log("tarefa digitada: ", newTodo);
+
+  todos.push(newTodo);
+  saveToLocalStorage();
+  renderTodos();
+  todoInput.value = "";
+}
+
+renderTodos();
+
+todoForm.addEventListener("submit", addTodo);
