@@ -8,8 +8,6 @@ function saveToLocalStorage() {
 
 let todos = JSON.parse(localStorage.getItem("todos")) || [];
 
-saveToLocalStorage();
-
 function renderTodos() {
   todoList.innerHTML = "";
   todos.forEach((todo, index) => {
@@ -50,6 +48,16 @@ function addTodo(event) {
   saveToLocalStorage();
   renderTodos();
   todoInput.value = "";
+}
+
+function editTodo(index) {
+  const newText = prompt("Editar tarefa:", todos[index]);
+
+  if (newText !== null && newText.trim() !== "") {
+    todos[index] = newText.trim();
+    saveToLocalStorage();
+    renderTodos();
+  }
 }
 
 renderTodos();
