@@ -25,6 +25,7 @@ function renderTodos() {
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Excluir";
+    deleteBtn.onclick = () => deleteTodo(index);
 
     actions.appendChild(editBtn);
     actions.appendChild(deleteBtn);
@@ -61,6 +62,15 @@ function editTodo(index) {
   }
 }
 
-renderTodos();
+function deleteTodo(index) {
+  const deleteTodo = confirm("Deseja realmente deletar a tarefa?");
 
+  if (deleteTodo) {
+    todos.splice(index, 1);
+    saveToLocalStorage();
+    renderTodos();
+  }
+}
+
+renderTodos();
 todoForm.addEventListener("submit", addTodo);
